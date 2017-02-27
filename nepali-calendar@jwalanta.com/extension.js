@@ -265,7 +265,7 @@ function init() {
 
 function enable() {
   nepcal = new NepaliCalendarIndicator;
-  Main.panel.addToStatusArea('nepcal-indicator', nepcal);
+  Main.panel.addToStatusArea('nepcal-indicator', nepcal, 100, 'center');
 }
 
 function disable() {
