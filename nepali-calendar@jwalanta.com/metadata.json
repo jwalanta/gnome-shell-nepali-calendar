@@ -1,18 +1,18 @@
 {
-	"uuid": "nepali-calendar@jwalanta.com", 
-	"description": "Displays current Nepali date", 
-	"name": "Nepali Calendar",
-	"shell-version": [
-	    "3.4", 
-	    "3.6", 
-	    "3.8", 
-	    "3.10", 
-	    "3.12", 
-	    "3.14", 
-	    "3.16", 
-	    "3.18", 
-	    "3.20", 
-	    "3.22"
-	], 
-	"version": 1
+  "uuid": "nepali-calendar@jwalanta.com",
+  "description": "Displays current Nepali date",
+  "name": "Nepali Calendar",
+  "shell-version": [
+    "3.4",
+    "3.6",
+    "3.8",
+    "3.10",
+    "3.12",
+    "3.14",
+    "3.16",
+    "3.18",
+    "3.20",
+    "3.22"
+  ],
+  "version": 1.1
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Nepali Date Indicator
  *
  * gnome-shell extension to show current Nepali date
@@ -23,14 +23,14 @@ var nepDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', 
 var nepMonths = ["","बैशाख","ज्येष्ठ","आषाढ","श्रावण","भाद्र","आश्विन","कार्तिक","मंसिर","पौष","माघ","फाल्गुन","चैत्र"];
 
 var digitToNepali = function(n){
-  var nstr = n.toString()
-  var str = ""
+  var nstr = n.toString();
+  var str = "";
 
   for (i=0; i < nstr.length; i++){
-    str += nepDigits[parseInt(nstr[i])]
+    str += nepDigits[parseInt(nstr[i])];
   }
 
-  return str
+  return str;
 }
 
 var engtonep = {
@@ -211,7 +211,6 @@ const NepaliCalendarIndicator = new Lang.Class({
     Name: 'NepaliCalendarIndicator',
     Extends: PanelMenu.Button,
 
-
     _init: function () {
       this.parent(0.0, "Nepali Calendar Indicator", false);
       this.buttonText = new St.Label({
@@ -222,14 +221,12 @@ const NepaliCalendarIndicator = new Lang.Class({
       this._refresh();
     },
 
-
     _refresh: function () {
       this._refreshDate()
       this._removeTimeout();
       this._timeout = Mainloop.timeout_add_seconds(1, Lang.bind(this, this._refresh));
       return true;
     },
-
 
     _refreshDate: function (data) {
 
@@ -240,10 +237,8 @@ const NepaliCalendarIndicator = new Lang.Class({
 
       var nepDate = engtonep.DateConversion(now_npt.getFullYear(), now_npt.getMonth() + 1, now_npt.getDate())
       let txt = digitToNepali(nepDate.getYear()) + "/" + nepMonths[nepDate.getMonth()] + "/" + digitToNepali(nepDate.getDate());
-       global.log(txt)
       this.buttonText.set_text(txt);
     },
-
 
     _removeTimeout: function () {
       if (this._timeout) {
@@ -252,15 +247,11 @@ const NepaliCalendarIndicator = new Lang.Class({
       }
     },
 
-
     stop: function () {
       if (this._timeout)
         Mainloop.source_remove(this._timeout);
 
-
       this._timeout = undefined;
-
-
       this.menu.removeAll();
     }
   }
@@ -269,16 +260,13 @@ const NepaliCalendarIndicator = new Lang.Class({
 
 let nepcal;
 
-
 function init() {
 }
-
 
 function enable() {
   nepcal = new NepaliCalendarIndicator;
   Main.panel.addToStatusArea('nepcal-indicator', nepcal);
 }
-
 
 function disable() {
   nepcal.stop();
